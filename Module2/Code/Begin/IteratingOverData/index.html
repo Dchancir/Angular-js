@@ -3,10 +3,21 @@
 <head>
     <title>Iterating Over Data</title>
 </head>
-<body ng-init="names=['Dave','Jeff','Heedy','Danny']">
-
-
-
+<body ng-init="people=[{name: 'Dave', city: 'Cali'}, {name: 'Jeff', city: 'Envigado'}, {name: 'Danny', city: 'Medellin'}]">
+    <h3>Iterating through data with ng-repeat</h3>
+    <ul>
+        <li ng-repeat="person in people | orderBy:'city'">{{person.name}}</li>
+    </ul>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>City</td>
+        </tr>
+        <tr ng-repeat="person in people | orderBy:'city'">
+            <td>{{person.name}}</td>
+            <td>{{person.city}}</td>
+        </tr>
+    </table>
     <script src="angular.js"></script>
 </body>
 </html>
